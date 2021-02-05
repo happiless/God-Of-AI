@@ -1,46 +1,7 @@
-def fibonacci(n):
-    a, b = 0, 1
-    for i in range(n):
-        a, b = b, a+b
-        yield a
-
-
-for i in fibonacci(10):
-    print(i)
-
-print(repr(fibonacci(10)))
-
-
-print(ord('A'))
-print(chr(65))
-print(chr(ord('A')+32))
-
-print(eval("2**3"))
-
-import os
-import platform
-print(platform.architecture())
-print(platform.uname())
-
-import random
-
-print(random.choices([1,2,3,4]))
-
-# 微信发红包
-def repack(total, nums):
-    if type(total) is not int or type(nums) is not int:
-        return "Wrong numbers!"
-    every = [0]
-    for i in range(nums - 1):
-        money = random.randint(1, total-sum(every)) if total-sum(every)>0 else 0
-        every.append(money)
-    return every[1:] + [total-sum(every)]
-
-print(repack(100, 4))
-
-
+# numpy
 import numpy as np
-a = np.array([[1,2,3], [4,5,6]])
+
+a = np.array([[1, 2, 3], [4, 5, 6]])
 print(a)
 print("数组a的维度个数", a.ndim)
 print("数组a的各个维度长度", a.shape)
@@ -53,12 +14,12 @@ print(b.reshape(2, 2))
 c = np.linspace(0, 2, 10)
 print(c)
 
-zero_arr = np.zeros((3,4))
-one_arr = np.ones((2,3,4), dtype=np.int64)
+zero_arr = np.zeros((3, 4))
+one_arr = np.ones((2, 3, 4), dtype=np.int64)
 print(zero_arr)
 print(one_arr)
 
-print(np.eye(3))    # 单位矩阵
+print(np.eye(3))  # 单位矩阵
 
 arr1 = np.array([[1, 2], [3, 4]])
 arr2 = np.array([[5, 6], [7, 8]])
@@ -91,3 +52,4 @@ print("array shape:", a_arr.shape)
 a_mat = np.mat([1, 2])
 print("mat:", a_mat)
 print("mat shape:", a_mat.shape)
+
