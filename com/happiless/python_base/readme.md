@@ -1,23 +1,39 @@
-    str()       字符串
-    ascii()     ascii码值
-    repr()      保存了对象的信息
-    
-    input(), print()    输入输出
-    ord(), chr()        ascii字符与ascii码值互转
-    
-    sum()       求和
-    type()      得到对象的类型
-    round()     五舍六入
-    id()        获得对象的内存地址
-    hash()      获得可哈希对象的哈希值
-    eval()      将字符串转为表达式
-    
+## Python
+##### 内置函数
+```python
+- str()       # 字符串
+- dict()
+- set()
+- list()
+- abs() 
+- min() 
+- max()
+- dir()
+- sorted()
+- repr()        # 保存了对象的信息
+- ascii()
+- input() & print()
+- ord() & chr()     # ascii字符与ascii码值互转
+- sum()
+- type()
+- round()
+- id() 
+- hash()
+- eval()            # 将字符串转为表达式
+- zip()
+```
+##### python 标准库
+    https://docs.python.org/zh-cn/3.6/library/index.html
 ##### 常用包/模块
-    datetime
-    os
-    platform
-    random
-    numpy
-        
-    pandas
-    
+```
+datetime
+os
+platform
+random
+numpy
+    矩阵转置    T
+    矩阵的逆    I
+
+pandas
+matplotlib
+```
