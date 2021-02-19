@@ -165,7 +165,8 @@ def get_path_BFS(lines_info, neighbor_info, from_station, to_station):
                     # 找到路径, 结束
                     return path
         nodes = new_nodes
-    print('未能找到路径')
+    else:
+        print('未能找到路径')
     return None
 
 
@@ -216,8 +217,6 @@ def get_path_Astar(lines_info, neighbor_info, stations_info, from_station, to_st
             neighbors = neighbor_info.get(index).copy()
             if len(node['path']) >= 2:
                 # 不向这个路径的反向去搜索
-                print(node['path'])
-                print(node['path'][-2])
                 neighbors.remove(node['path'][-2])
             for i in range(len(neighbors)):
                 count += 1
@@ -232,18 +231,18 @@ def get_path_Astar(lines_info, neighbor_info, stations_info, from_station, to_st
                     print(f'共检索{count}次。')
                     return path
                 if neighbor in searched:
-                    if g > searched[neighbor]:
+                    if g >= searched[neighbor]:
                         # 说明现在搜索的路径不是最优，忽略
                         continue
                     else:
                         searched[neighbor] = g
-                        node.drop(neighbor, axis=0, inplace=True)
+                        nodes.drop(neighbor, axis=0, inplace=True)
                         row = pd.DataFrame([[path, cost, g, h]], index=[neighbor], columns=['path', 'cost', 'g', 'h'])
                         nodes = nodes.append(row)
                 else:
                     searched[neighbor] = g
                     row = pd.DataFrame([[path, cost, g, h]], index=[neighbor], columns=['path', 'cost', 'g', 'h'])
-                    nodes.append(row)
+                    nodes = nodes.append(row)
 
             # 个站点的所有邻居都搜索完了，删除这个节点
             nodes.drop(index, axis=0, inplace=True)
