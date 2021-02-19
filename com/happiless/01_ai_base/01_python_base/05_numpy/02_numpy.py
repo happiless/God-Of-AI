@@ -55,3 +55,14 @@ print("array shape:", a_arr.shape)
 a_mat = np.mat([1, 2])
 print("mat:", a_mat)
 print("mat shape:", a_mat.shape)
+
+
+A = np.mat([[1, 2], [4, 5]])
+b = np.mat([3, 6]).T
+res = np.linalg.solve(A, b)
+print("线性方程组的解为: ", res)
+
+A = np.array([[1, 2], [4, 5]])
+b = np.array([3, 6])
+res = np.linalg.solve(A, b)
+print("线性方程组的解为: ", res.reshape(1, -1).T)
