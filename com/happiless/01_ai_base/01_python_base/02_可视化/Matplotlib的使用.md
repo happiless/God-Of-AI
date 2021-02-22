@@ -143,9 +143,6 @@ plt.rcParams['font.family']=['SimHei']
     ```
 
 
-
-
-
 ### 绘画条状图
 
 排列在工作表的列或行中的数据可以绘制到中
