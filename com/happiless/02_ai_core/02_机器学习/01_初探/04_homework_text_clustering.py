@@ -14,7 +14,7 @@ from nltk.stem.snowball import SnowballStemmer
 
 from collections import defaultdict
 
-data = pd.read_csv('./data/abcnews-date-text.csv')
+data = pd.read_csv('data/abcnews-date-text.csv')
 
 # 查看重复的数据行
 print(data[data['headline_text'].duplicated(keep=False)].sort_values('headline_text').head(8))
